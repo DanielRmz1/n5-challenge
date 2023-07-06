@@ -48,12 +48,10 @@ interface ButtonProps {
 	disabled?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ secondary, children, disabled }) => {
-	return (
-		<StyledButton secondary={secondary} disabled={disabled}>
-			{children}
-		</StyledButton>
-	);
-};
+const Button: FC<ButtonProps> = ({ secondary, children, disabled }) => (
+	<StyledButton secondary={secondary} disabled={disabled}>
+		{children}
+	</StyledButton>
+);
 
 export default Button;
