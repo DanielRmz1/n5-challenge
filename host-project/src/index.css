@@ -1,5 +1,6 @@
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+		sans-serif;
 	line-height: 1.5;
 	font-size: 16px;
 	font-weight: 400;
@@ -13,4 +14,18 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
+
+	--secondary-color: #707070;
+	--text-color: rgba(255, 255, 255, 0.87);
+	--secondary-text-color: #333333;
+
+	--primary-color: #f2f2f2;
+	--primary-color-100: #d9d9d9;
+	--primary-color-200: #bfbfbf;
+	--primary-color-300: #a6a6a6;
+
+	--accent-color: #fe301b;
+	--accent-color-100: #e51701;
+	--accent-color-200: #b31000;
+	--accent-color-300: #810900;
 }
