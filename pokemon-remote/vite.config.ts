@@ -11,13 +11,26 @@ export default defineConfig({
 		tsconfigPaths(),
 		tsChecker({ typescript: true }),
 		federation({
-			name: "pokemon",
-			filename: "pokemon.tsx",
+			name: "pokemon-remote",
+			filename: "pokemon.js",
 			exposes: {
 				"./Pokemon": "./src/components/Pokemon/index.tsx",
 			},
 			shared: ["react", "react-dom"],
 		}),
 	],
+	preview: {
+		host: "localhost",
+		port: 5001,
+		strictPort: true,
+		headers: {
+			"Access-Control-Allow-Origin": "*",
+		},
+	},
+	build: {
+		modulePreload: false,
+		target: "esnext",
+		minify: false,
+		cssCodeSplit: false,
+	},
 });
-

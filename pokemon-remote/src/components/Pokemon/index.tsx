@@ -8,6 +8,7 @@ const StyledPokemon = styled.div`
 	background-color: white;
 	border: 1px solid black;
 	max-width: 10rem;
+	color: black;
 `;
 
 const Pokemon = () => {

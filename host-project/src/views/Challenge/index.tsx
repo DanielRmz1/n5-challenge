@@ -1,5 +1,6 @@
 import Button from "components/Button";
 import React, { FC } from "react";
+import Pokemon from "remotePokemon/Pokemon";
 
 const Challenge: FC = () => (
 	<div>
@@ -13,6 +14,7 @@ const Challenge: FC = () => (
 			</Button>
 			<Button disabled>Disabled 2</Button>
 		</div>
+		<Pokemon />
 	</div>
 );
 
