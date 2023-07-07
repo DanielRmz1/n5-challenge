@@ -7,7 +7,7 @@
 
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+	background-color: var(--primary-color);
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -20,12 +20,18 @@
 	--secondary-text-color: #333333;
 
 	--primary-color: #f2f2f2;
-	--primary-color-100: #d9d9d9;
-	--primary-color-200: #bfbfbf;
-	--primary-color-300: #a6a6a6;
+	--primary-color-100: #bfbfbf;
+	--primary-color-200: #a6a6a6;
+	--primary-color-300: #8c8c8c;
+	--primary-color-400: #737373;
 
 	--accent-color: #fe301b;
 	--accent-color-100: #e51701;
 	--accent-color-200: #b31000;
 	--accent-color-300: #810900;
+}
+
+body {
+	margin: 0;
+	padding: 0;
 }

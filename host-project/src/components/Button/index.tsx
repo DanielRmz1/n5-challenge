@@ -46,14 +46,16 @@ interface ButtonProps {
 	secondary?: boolean;
 	children: string;
 	disabled?: boolean;
+	onClick: () => void;
 }
 
 const Button: FC<ButtonProps> = ({
 	secondary = false,
 	children,
 	disabled = false,
+	onClick,
 }) => (
-	<StyledButton secondary={secondary} disabled={disabled}>
+	<StyledButton secondary={secondary} disabled={disabled} onClick={onClick}>
 		{children}
 	</StyledButton>
 );
