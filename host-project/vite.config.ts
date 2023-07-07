@@ -13,6 +13,8 @@ export default defineConfig({
 			name: "host-app",
 			remotes: {
 				remotePokemon: "http://localhost:5001/assets/pokemon.js",
+				remoteRickAndMorty:
+					"http://localhost:5002/assets/rickAndMorty.js",
 			},
 			shared: ["react", "react-dom"],
 		}),
