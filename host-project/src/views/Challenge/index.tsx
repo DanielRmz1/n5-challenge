@@ -32,53 +32,48 @@ const Container = styled.div`
 		align-items: center;
 		gap: 1rem;
 		padding: 1rem;
+		color: var(--secondary-color);
 	}
 `;
 
 const Challenge: FC = () => {
 	const [showPokemon, togglePokemon] = useToggle();
 	const [showRickMorty, toggleRickMorty] = useToggle();
+
+	const renderMessage = () => <div>Click above button to render content</div>;
+
 	return (
 		<Container>
 			<Header />
 			<div className="container__remotes_wrapper">
-				<Pane className="container__remotes_wrapper--center">
-					<Button onClick={togglePokemon}>Pokemons</Button>
-					{showPokemon && (
+				<Pane
+					className="container__remotes_wrapper--center"
+					header={
+						<Button secondary onClick={togglePokemon}>
+							Pokemons
+						</Button>
+					}>
+					{showPokemon ? (
 						<Suspense fallback={<Loader />}>
 							<Pokemon />
 						</Suspense>
+					) : (
+						renderMessage()
 					)}
 				</Pane>
-				<Pane className="container__remotes_wrapper--center">
-					<Button secondary onClick={toggleRickMorty}>
-						Rick And Morty
-					</Button>
-					{showRickMorty && (
+				<Pane
+					className="container__remotes_wrapper--center"
+					header={
+						<Button secondary onClick={toggleRickMorty}>
+							Rick And Morty
+						</Button>
+					}>
+					{showRickMorty ? (
 						<Suspense fallback={<Loader />}>
 							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
-							<RickAndMorty />
 						</Suspense>
+					) : (
+						renderMessage()
 					)}
 				</Pane>
 			</div>

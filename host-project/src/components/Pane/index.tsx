@@ -7,17 +7,34 @@ const StyledPane = styled.div`
 	box-shadow: 0.15rem 0.15rem 0.75rem rgba(0, 0, 0, 0.2);
 	border-radius: 0.25rem;
 	height: fit-content;
-	max-height: calc(100vh - 11.25rem);
-	overflow-y: auto;
+
+	.pane__header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 1rem;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	}
+
+	.pane__body {
+		overflow-y: auto;
+		max-height: calc(100vh - 16rem);
+	}
 `;
 
 interface PaneProps {
 	children: ReactNode | ReactNode[];
 	className?: string;
+	header?: ReactNode;
 }
 
-const Pane: FC<PaneProps> = ({ children, className = "" }) => {
-	return <StyledPane className={className}>{children}</StyledPane>;
+const Pane: FC<PaneProps> = ({ children, className = "", header = null }) => {
+	return (
+		<StyledPane>
+			{header && <div className="pane__header">{header}</div>}
+			<div className={`pane__body ${className}`}>{children}</div>
+		</StyledPane>
+	);
 };
 
 export default Pane;
