@@ -3,6 +3,7 @@ import Button from "components/Button";
 import { languages } from "constants/constants";
 import useStore from "hooks/useStore";
 import { Language } from "types/language";
+import { FormattedMessage } from "react-intl";
 
 const ToggleButton = () => {
 	const [selectedLanguage, setLanguage] = useStore((state) => [
@@ -15,7 +16,7 @@ const ToggleButton = () => {
 			key={index}
 			secondary={lang.code === selectedLanguage.code}
 			onClick={() => handleToggleClick(lang)}>
-			{lang.name}
+			<FormattedMessage id={`app.${lang.code}`} />
 		</Button>
 	));
 };

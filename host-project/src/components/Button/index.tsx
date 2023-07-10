@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 
 interface StyleButtonProps {
@@ -44,7 +44,7 @@ const StyledButton = styled.button<StyleButtonProps>`
 
 interface ButtonProps {
 	secondary?: boolean;
-	children: string;
+	children: string | ReactNode;
 	disabled?: boolean;
 	onClick: () => void;
 }

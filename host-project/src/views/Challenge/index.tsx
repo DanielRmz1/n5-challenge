@@ -6,6 +6,7 @@ import Header from "components/Header";
 import Loader from "components/Loader";
 import Pane from "components/Pane";
 import useStore from "hooks/useStore";
+import { FormattedMessage } from "react-intl";
 
 // Lazy remotes
 const Pokemon = lazy(() => import("remotePokemon/Pokemon") as any);
@@ -43,9 +44,7 @@ const Challenge: FC = () => {
 	const [showRickMorty, toggleRickMorty] = useToggle();
 	const language = useStore((state) => state.language);
 
-	const renderMessage = () => (
-		<div>Click above button to render characters</div>
-	);
+	const renderMessage = () => <FormattedMessage id="app.clickAboveButton" />;
 
 	return (
 		<Container>
@@ -55,7 +54,7 @@ const Challenge: FC = () => {
 					className="container__remotes_wrapper--center"
 					header={
 						<Button secondary onClick={togglePokemon}>
-							Pokemons
+							<FormattedMessage id="app.pokemons" />
 						</Button>
 					}>
 					{showPokemon ? (
@@ -70,7 +69,7 @@ const Challenge: FC = () => {
 					className="container__remotes_wrapper--center"
 					header={
 						<Button secondary onClick={toggleRickMorty}>
-							Rick And Morty
+							<FormattedMessage id="app.rickAndMorty" />
 						</Button>
 					}>
 					{showRickMorty ? (
