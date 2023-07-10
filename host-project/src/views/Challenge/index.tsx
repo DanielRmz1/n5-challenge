@@ -1,10 +1,11 @@
-import React, { FC, Suspense, lazy, useTransition, useState } from "react";
+import React, { FC, Suspense, lazy } from "react";
 import Button from "components/Button";
 import styled from "styled-components";
 import useToggle from "hooks/useToggle";
 import Header from "components/Header";
 import Loader from "components/Loader";
 import Pane from "components/Pane";
+import useStore from "hooks/useStore";
 
 // Lazy remotes
 const Pokemon = lazy(() => import("remotePokemon/Pokemon") as any);
@@ -40,6 +41,7 @@ const Container = styled.div`
 const Challenge: FC = () => {
 	const [showPokemon, togglePokemon] = useToggle();
 	const [showRickMorty, toggleRickMorty] = useToggle();
+	const language = useStore((state) => state.language);
 
 	const renderMessage = () => (
 		<div>Click above button to render characters</div>
@@ -58,7 +60,7 @@ const Challenge: FC = () => {
 					}>
 					{showPokemon ? (
 						<Suspense fallback={<Loader />}>
-							<Pokemon />
+							<Pokemon language={language.code} />
 						</Suspense>
 					) : (
 						renderMessage()

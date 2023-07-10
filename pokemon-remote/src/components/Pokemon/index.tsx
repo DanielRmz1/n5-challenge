@@ -15,6 +15,7 @@ const Pokemon: FC<Props> = ({ language = "en" }) => {
 	if (isLoading || !list?.length) {
 		return <div>Loading pokemons...</div>;
 	}
+	console.log("received language in Pokemon -> ", language);
 	return (
 		<>
 			{list.map((pokemon) => (
