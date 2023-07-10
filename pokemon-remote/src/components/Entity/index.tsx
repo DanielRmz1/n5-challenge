@@ -1,7 +1,8 @@
-import React, { FC } from "react";
+import React, { useRef, useEffect, FC } from "react";
 import { IPokemon } from "types/pokemon";
 import styled from "styled-components";
 import { usePokemonDetail } from "hooks/usePokemons";
+import EntityDescription from "./components/EntityDescription";
 
 const StyledEntity = styled.div`
 	display: grid;
@@ -21,27 +22,6 @@ const StyledEntity = styled.div`
 
 const Entity: FC<IPokemon> = ({ url, name }) => {
 	const [detail, isLoading] = usePokemonDetail(url);
-	const renderDetailInformation = () => (
-		<>
-			<div>
-				<strong>Name:</strong> {name}
-			</div>
-			<div>
-				<strong>Experience:</strong> {detail.base_experience}
-			</div>
-			<div>
-				<strong>Height:</strong> {detail.height}
-			</div>
-			<div>
-				<strong>Weight:</strong> {detail.weight}
-			</div>
-			{detail.stats.map((stat) => (
-				<div>
-					<strong>{stat.stat.name}</strong> {stat.base_stat}
-				</div>
-			))}
-		</>
-	);
 	const renderLoadingMessage = () => <div>Loading...</div>;
 	if (isLoading) {
 		return <div>Loading...</div>;
@@ -52,7 +32,11 @@ const Entity: FC<IPokemon> = ({ url, name }) => {
 				<img src={detail.sprites.front_default} width="100px" />
 			</div>
 			<div className="entity__description">
-				{isLoading ? renderLoadingMessage() : renderDetailInformation()}
+				{isLoading ? (
+					renderLoadingMessage()
+				) : (
+					<EntityDescription {...detail} />
+				)}
 			</div>
 		</StyledEntity>
 	);
