@@ -23,7 +23,6 @@ const Container = styled.div`
 		grid-template-columns: 1fr 1fr;
 		width: 90%;
 		gap: 2rem;
-		max-height: 50vh;
 	}
 
 	.container__remotes_wrapper--center {
@@ -31,8 +30,10 @@ const Container = styled.div`
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
-		padding: 1rem;
+		padding: 2rem;
 		color: var(--secondary-color);
+		overflow-x: hidden;
+		max-height: calc(100vh - 18rem);
 	}
 `;
 
@@ -40,7 +41,9 @@ const Challenge: FC = () => {
 	const [showPokemon, togglePokemon] = useToggle();
 	const [showRickMorty, toggleRickMorty] = useToggle();
 
-	const renderMessage = () => <div>Click above button to render content</div>;
+	const renderMessage = () => (
+		<div>Click above button to render characters</div>
+	);
 
 	return (
 		<Container>

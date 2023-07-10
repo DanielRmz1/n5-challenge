@@ -16,7 +16,7 @@ export default defineConfig({
 				remoteRickAndMorty:
 					"http://localhost:5002/assets/rickAndMorty.js",
 			},
-			shared: ["react", "react-dom"],
+			shared: ["react", "react-dom", "swr"],
 		}),
 		tsconfigPaths(),
 		tsChecker({ typescript: true }),

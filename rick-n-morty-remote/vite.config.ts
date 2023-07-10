@@ -16,7 +16,7 @@ export default defineConfig({
 			exposes: {
 				"./RickAndMorty": "./src/components/RickAndMorty/index.tsx",
 			},
-			shared: ["react", "react-dom"],
+			shared: ["react", "react-dom", "swr"],
 		}),
 	],
 	preview: {
@@ -34,4 +34,3 @@ export default defineConfig({
 		cssCodeSplit: false,
 	},
 });
-

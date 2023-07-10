@@ -1,14 +1,17 @@
-import React from "react";
-import styled from "styled-components";
+import React, { FC } from "react";
+import { usePokemonList } from "hooks/usePokemons";
+import Entity from "components/Entity";
 
-const StyledPokemon = styled.div`
-	font-size: 2rem;
-	width: 100%;
-	color: var(--secondary-text-color);
-`;
+interface Props {
+	language: "en" | "es";
+}
 
-const Pokemon = () => {
-	return <StyledPokemon>Metapod</StyledPokemon>;
+const Pokemon: FC<Props> = ({ language = "en" }) => {
+	const [list, isLoading] = usePokemonList(0);
+	if (isLoading) {
+		return <div>Loading pokemons</div>;
+	}
+	return list.map((pokemon) => <Entity {...pokemon} />);
 };
 
 export default Pokemon;

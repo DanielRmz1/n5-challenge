@@ -18,7 +18,6 @@ const StyledPane = styled.div`
 
 	.pane__body {
 		overflow-y: auto;
-		max-height: calc(100vh - 16rem);
 	}
 `;
 
