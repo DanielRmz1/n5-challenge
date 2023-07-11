@@ -1,6 +1,6 @@
-import ToggleButton from "components/ToggleButton";
 import React, { FC } from "react";
 import styled from "styled-components";
+import ToggleButton from "components/ToggleButton";
 
 const StyledHeader = styled.div`
 	display: flex;

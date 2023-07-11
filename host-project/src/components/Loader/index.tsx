@@ -31,7 +31,7 @@ const StyledLoader = styled.div`
 
 const Loader = () => (
 	<Container>
-		<StyledLoader />
+		<StyledLoader data-testid="loader" />
 	</Container>
 );
 
