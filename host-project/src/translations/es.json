@@ -3,5 +3,13 @@
 	"app.pokemons": "Pokemons",
 	"app.rickAndMorty": "Rick y Morty",
 	"app.es": "Español",
-	"app.en": "Inglés"
+	"app.en": "Inglés",
+
+	"app.loading": "Cargando...",
+
+	"app.pokemon.loading": "Cargando Pokemons...",
+	"app.pokemon.name": "Nombre",
+	"app.pokemon.experience": "Experiencia",
+	"app.pokemon.height": "Altura",
+	"app.pokemon.weight": "Peso"
 }

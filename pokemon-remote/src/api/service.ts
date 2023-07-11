@@ -11,4 +11,4 @@ export const Uri: UriCollection = {
 		`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${offset}`,
 };
 
-export const get = (url: string) => useSwr(url, fetcher);
+export const get = (url: string | null) => useSwr(url, fetcher);

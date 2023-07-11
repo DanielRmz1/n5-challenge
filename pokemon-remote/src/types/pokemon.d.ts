@@ -19,3 +19,16 @@ export interface PokemonDetail {
 		};
 	}[];
 }
+
+export interface PokemonStats {
+	names: {
+		language: {
+			name: string;
+		};
+		name: string;
+	}[];
+}
+
+export interface LanguageProp {
+	language?: string;
+}

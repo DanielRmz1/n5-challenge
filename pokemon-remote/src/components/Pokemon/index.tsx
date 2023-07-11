@@ -2,24 +2,24 @@ import React, { FC, useState, useRef } from "react";
 import { usePokemonList } from "hooks/usePokemons";
 import Entity from "components/Entity";
 import useIntersection from "hooks/useIntersection";
+import { FormattedMessage } from "react-intl";
 
 interface Props {
-	language: "en" | "es";
+	language: string;
 }
 
-const Pokemon: FC<Props> = ({ language = "en" }) => {
+const Pokemon: FC<Props> = ({ language }) => {
 	const [pageIndex, setPageIndex] = useState<number>(0);
 	const [list, isLoading] = usePokemonList(pageIndex);
 	const ref = useRef<HTMLDivElement>(null);
 	useIntersection(ref, () => setPageIndex((prev) => prev + 10));
 	if (isLoading || !list?.length) {
-		return <div>Loading pokemons...</div>;
+		return <FormattedMessage id="app.pokemon.loading" />;
 	}
-	console.log("received language in Pokemon -> ", language);
 	return (
 		<>
 			{list.map((pokemon) => (
-				<Entity {...pokemon} />
+				<Entity {...pokemon} language={language} />
 			))}
 			<div ref={ref}>{isLoading && "Loading..."}</div>
 		</>

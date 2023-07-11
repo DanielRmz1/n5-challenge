@@ -16,7 +16,13 @@ export default defineConfig({
 			exposes: {
 				"./Pokemon": "./src/components/Pokemon/index.tsx",
 			},
-			shared: ["react", "react-dom", "swr"],
+			shared: [
+				"react",
+				"react-dom",
+				"react-intl",
+				"styled-components",
+				"swr",
+			],
 		}),
 	],
 	preview: {

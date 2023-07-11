@@ -10,15 +10,27 @@ export default defineConfig({
 	plugins: [
 		react(),
 		federation({
-			name: "host-app",
+			name: "host",
 			remotes: {
 				remotePokemon: "http://localhost:5001/assets/pokemon.js",
 				remoteRickAndMorty:
 					"http://localhost:5002/assets/rickAndMorty.js",
 			},
-			shared: ["react", "react-dom", "swr"],
+			shared: [
+				"react",
+				"react-dom",
+				"react-intl",
+				"styled-components",
+				"swr",
+			],
 		}),
 		tsconfigPaths(),
 		tsChecker({ typescript: true }),
 	],
+	build: {
+		modulePreload: false,
+		target: "esnext",
+		minify: false,
+		cssCodeSplit: false,
+	},
 });

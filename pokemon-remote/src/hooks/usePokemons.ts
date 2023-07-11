@@ -1,4 +1,4 @@
-import { IPokemon, PokemonDetail } from "types/pokemon";
+import { IPokemon, PokemonDetail, PokemonStats } from "types/pokemon";
 import { Uri, get } from "api/service";
 import { useState, useEffect } from "react";
 
@@ -21,4 +21,9 @@ export const usePokemonList = (offset: number = 0): [IPokemon[], boolean] => {
 export const usePokemonDetail = (url: string): [PokemonDetail, boolean] => {
 	const { data, isLoading } = get(url);
 	return [data as PokemonDetail, isLoading];
+};
+
+export const usePokemonStat = (url: string | null): [PokemonStats, boolean] => {
+	const { data, isLoading } = get(url);
+	return [data as PokemonStats, isLoading];
 };

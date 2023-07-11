@@ -1,8 +1,9 @@
-import React, { useRef, useEffect, FC } from "react";
-import { IPokemon } from "types/pokemon";
+import React, { FC } from "react";
+import { IPokemon, LanguageProp } from "types/pokemon";
 import styled from "styled-components";
 import { usePokemonDetail } from "hooks/usePokemons";
 import EntityDescription from "./components/EntityDescription";
+import { FormattedMessage } from "react-intl";
 
 const StyledEntity = styled.div`
 	display: grid;
@@ -20,11 +21,11 @@ const StyledEntity = styled.div`
 	}
 `;
 
-const Entity: FC<IPokemon> = ({ url, name }) => {
+const Entity: FC<IPokemon & LanguageProp> = ({ url, language }) => {
 	const [detail, isLoading] = usePokemonDetail(url);
-	const renderLoadingMessage = () => <div>Loading...</div>;
+	const renderLoadingMessage = () => <FormattedMessage id="app.loading" />;
 	if (isLoading) {
-		return <div>Loading...</div>;
+		return renderLoadingMessage();
 	}
 	return (
 		<StyledEntity>
@@ -35,7 +36,7 @@ const Entity: FC<IPokemon> = ({ url, name }) => {
 				{isLoading ? (
 					renderLoadingMessage()
 				) : (
-					<EntityDescription {...detail} />
+					<EntityDescription {...detail} language={language} />
 				)}
 			</div>
 		</StyledEntity>
