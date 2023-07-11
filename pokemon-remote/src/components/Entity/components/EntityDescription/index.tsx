@@ -3,13 +3,12 @@ import { LanguageProp, PokemonDetail } from "types/pokemon";
 import { FormattedMessage } from "react-intl";
 import Stat from "../Stat";
 
-const EntityDescription: FC<PokemonDetail & LanguageProp> = ({
+const EntityDescription: FC<PokemonDetail> = ({
 	name,
 	base_experience,
 	height,
 	weight,
 	stats,
-	language,
 }) => {
 	return (
 		<>
@@ -30,11 +29,7 @@ const EntityDescription: FC<PokemonDetail & LanguageProp> = ({
 				value={weight}
 			/>
 			{stats.map((stat) => (
-				<Stat
-					value={stat.base_stat}
-					url={stat.stat.url}
-					language={language}
-				/>
+				<Stat value={stat.base_stat} url={stat.stat.url} />
 			))}
 		</>
 	);

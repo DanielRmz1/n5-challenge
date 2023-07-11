@@ -21,7 +21,7 @@ const StyledEntity = styled.div`
 	}
 `;
 
-const Entity: FC<IPokemon & LanguageProp> = ({ url, language }) => {
+const Entity: FC<IPokemon> = ({ url }) => {
 	const [detail, isLoading] = usePokemonDetail(url);
 	const renderLoadingMessage = () => <FormattedMessage id="app.loading" />;
 	if (isLoading) {
@@ -36,7 +36,7 @@ const Entity: FC<IPokemon & LanguageProp> = ({ url, language }) => {
 				{isLoading ? (
 					renderLoadingMessage()
 				) : (
-					<EntityDescription {...detail} language={language} />
+					<EntityDescription {...detail} />
 				)}
 			</div>
 		</StyledEntity>

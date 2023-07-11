@@ -1,4 +1,4 @@
-import useSwr from "swr";
+import useSWRImmutable from "swr/immutable";
 
 interface UriCollection {
 	pokemonList: (offset: number) => string;
@@ -11,4 +11,4 @@ export const Uri: UriCollection = {
 		`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${offset}`,
 };
 
-export const get = (url: string | null) => useSwr(url, fetcher);
+export const get = (url: string | null) => useSWRImmutable(url, fetcher);

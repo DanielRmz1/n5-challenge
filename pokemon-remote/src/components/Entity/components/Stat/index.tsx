@@ -1,7 +1,7 @@
+import LanguageContext from "context/LanguageContext";
 import { usePokemonStat } from "hooks/usePokemons";
-import React, { ReactNode, FC } from "react";
+import React, { ReactNode, FC, useContext } from "react";
 import { FormattedMessage } from "react-intl";
-import { LanguageProp } from "types/pokemon";
 
 interface Props {
 	description?: ReactNode;
@@ -9,13 +9,9 @@ interface Props {
 	url?: string;
 }
 
-const Stat: FC<Props & LanguageProp> = ({
-	description = null,
-	value,
-	url = null,
-	language,
-}) => {
+const Stat: FC<Props> = ({ description = null, value, url = null }) => {
 	const [data, isLoading] = usePokemonStat(url);
+	const { language } = useContext(LanguageContext);
 
 	if (isLoading) {
 		return <FormattedMessage id="app.loading" />;
@@ -26,7 +22,6 @@ const Stat: FC<Props & LanguageProp> = ({
 			return description;
 		}
 		if (data) {
-			console.log(language);
 			const remote = data.names.find(
 				(names) => names.language.name === language
 			);
