@@ -51,6 +51,7 @@ const Challenge: FC = () => {
 			<Header />
 			<div className="container__remotes_wrapper">
 				<Pane
+					data-testid="pokemon-container"
 					className="container__remotes_wrapper--center"
 					header={
 						<Button secondary onClick={togglePokemon}>
@@ -66,6 +67,7 @@ const Challenge: FC = () => {
 					)}
 				</Pane>
 				<Pane
+					data-testid="rick-and-morty-container"
 					className="container__remotes_wrapper--center"
 					header={
 						<Button secondary onClick={toggleRickMorty}>

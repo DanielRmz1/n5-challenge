@@ -1,7 +1,6 @@
 import React from "react";
 import Header from ".";
 import { render, screen } from "utils/test-utils";
-import { vi } from "vitest";
 
 vi.mock("components/ToggleButton", () => {
 	return {

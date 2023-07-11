@@ -10,5 +10,6 @@
 	"prettier.endOfLine": "crlf",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"typescript.validate.enable": true,
-	"files.eol": "\r\n"
+	"files.eol": "\r\n",
+	"vitest.enable": true
 }

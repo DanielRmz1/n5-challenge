@@ -25,11 +25,17 @@ interface PaneProps {
 	children: ReactNode | ReactNode[];
 	className?: string;
 	header?: ReactNode;
+	"data-testid"?: string;
 }
 
-const Pane: FC<PaneProps> = ({ children, className = "", header = null }) => {
+const Pane: FC<PaneProps> = ({
+	children,
+	className = "",
+	header = null,
+	"data-testid": dataTestId,
+}) => {
 	return (
-		<StyledPane>
+		<StyledPane data-testid={dataTestId}>
 			{header && <div className="pane__header">{header}</div>}
 			<div className={`pane__body ${className}`}>{children}</div>
 		</StyledPane>
