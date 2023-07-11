@@ -11,5 +11,10 @@
 	"app.pokemon.name": "Nombre",
 	"app.pokemon.experience": "Experiencia",
 	"app.pokemon.height": "Altura",
-	"app.pokemon.weight": "Peso"
+	"app.pokemon.weight": "Peso",
+
+	"app.rickmorty.name": "Nombre",
+	"app.rickmorty.species": "Especies",
+	"app.rickmorty.origin": "Origen",
+	"app.rickmorty.location": "Locación"
 }

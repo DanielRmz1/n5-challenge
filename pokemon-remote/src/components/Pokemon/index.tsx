@@ -29,8 +29,8 @@ const Pokemon: FC<Props> = ({ language }) => {
 
 		return (
 			<>
-				{list.map((pokemon) => (
-					<Entity {...pokemon} />
+				{list.map((pokemon, index) => (
+					<Entity {...pokemon} key={index} />
 				))}
 				<div ref={ref}>{isLoading && renderLoading()}</div>
 			</>
