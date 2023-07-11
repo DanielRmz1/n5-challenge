@@ -3,7 +3,7 @@ import { cleanup, render } from "@testing-library/react";
 import { afterEach } from "vitest";
 import { IntlProvider } from "react-intl";
 import translations from "translations";
-import { vi } from "vitest";
+import useStore from "hooks/useStore";
 
 afterEach(() => {
 	cleanup();
@@ -15,8 +15,9 @@ function customRender(
 	{ locale = "en", ...options } = {}
 ) {
 	const Wrapper: FC<{ children: ReactNode }> = ({ children }) => {
+		const { code } = useStore((state) => state.language);
 		return (
-			<IntlProvider locale="en" messages={translations.en}>
+			<IntlProvider locale={code} messages={translations[code]}>
 				{children}
 			</IntlProvider>
 		);
