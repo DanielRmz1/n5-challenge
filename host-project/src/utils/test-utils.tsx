@@ -1,14 +1,29 @@
+import React, { FC, ReactNode } from "react";
 import { cleanup, render } from "@testing-library/react";
 import { afterEach } from "vitest";
+import { IntlProvider } from "react-intl";
+import translations from "translations";
+import { vi } from "vitest";
 
 afterEach(() => {
 	cleanup();
+	vi.resetAllMocks();
 });
 
-function customRender(ui: React.ReactElement, options = {}) {
+function customRender(
+	ui: React.ReactElement,
+	{ locale = "en", ...options } = {}
+) {
+	const Wrapper: FC<{ children: ReactNode }> = ({ children }) => {
+		return (
+			<IntlProvider locale="en" messages={translations.en}>
+				{children}
+			</IntlProvider>
+		);
+	};
 	return render(ui, {
 		// wrap provider(s) here if needed
-		wrapper: ({ children }) => children,
+		wrapper: Wrapper,
 		...options,
 	});
 }

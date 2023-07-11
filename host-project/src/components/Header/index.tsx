@@ -25,7 +25,7 @@ const StyledHeader = styled.div`
 const Header: FC = () => (
 	<StyledHeader>
 		<div className="header__title">
-			<h1>N5 Challenge</h1>
+			<h1 role="title">N5 Challenge</h1>
 		</div>
 		<div className="header__intl_toggle">
 			<ToggleButton />
