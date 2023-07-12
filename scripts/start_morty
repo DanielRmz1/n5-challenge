@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+cd rick-n-morty-remote || exit
+npm run preview

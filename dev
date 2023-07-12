@@ -1,0 +1,41 @@
+#!/usr/bin/bash
+
+action=$1
+
+print_message () {
+	printf " --- %s --- \n\n" "$1"
+}
+
+install_project () {
+	print_message "Installing Pokemons remote..."
+	cd pokemon-remote || exit
+	npm install
+	npm run build
+
+	print_message "Installing Rick And Morty remote..."
+	cd ..
+	cd rick-n-morty-remote || exit
+	npm install
+	npm run build
+
+	print_message "Installing host remote..."
+	cd ..
+	cd host-project || exit
+	npm install
+}
+
+start_project() {
+	scripts/start_morty & scripts/start_pokemon & scripts/start_host
+}
+
+case $action in
+	install)
+		install_project
+		;;
+	start)
+		start_project
+		;;
+	*)
+		print_message "UNHANDLED OPTION: Command -> $action <- not recognized"
+		;;
+esac

@@ -20,7 +20,7 @@ const RickAndMorty: FC<Props> = ({ language }) => {
 		setLang(language);
 	}, [language]);
 
-	const renderLoading = () => <FormattedMessage id="app.pokemon.loading" />;
+	const renderLoading = () => <FormattedMessage id="app.rickmorty.loading" />;
 
 	const renderContent = () => {
 		return (

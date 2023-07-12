@@ -13,6 +13,7 @@
 	"app.pokemon.height": "Altura",
 	"app.pokemon.weight": "Peso",
 
+	"app.rickmorty.loading": "Cargando personajes...",
 	"app.rickmorty.name": "Nombre",
 	"app.rickmorty.species": "Especies",
 	"app.rickmorty.origin": "Origen",

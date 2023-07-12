@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+cd host-project || exit
+npm start
