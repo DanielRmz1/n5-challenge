@@ -7,7 +7,7 @@ export default function useIntersection(
 	const prevY = useRef<number>(0);
 	const handleObserver: IntersectionObserverCallback = ([entry]) => {
 		const positionY = entry.boundingClientRect.y;
-		if (prevY.current > positionY) {
+		if (prevY.current > positionY && entry.isIntersecting) {
 			callback && callback();
 		}
 		prevY.current = positionY;

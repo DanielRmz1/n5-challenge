@@ -14,7 +14,7 @@ const RickAndMorty: FC<Props> = ({ language }) => {
 	const [pageIndex, setPageIndex] = useState<number>(0);
 	const ref = useRef<HTMLDivElement>(null);
 	const [list, isLoading] = useCharacterList(pageIndex);
-	useIntersection(ref, () => setPageIndex((prev) => prev + 10));
+	useIntersection(ref, () => setPageIndex((prev) => prev + 1));
 
 	useEffect(() => {
 		setLang(language);
