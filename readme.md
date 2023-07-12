@@ -61,7 +61,6 @@ But if you prefer you can run each one independently
 -   [React](https://reactjs.org/)
 -   [Vite](https://vitejs.dev/)
 -   [TypeScript](https://www.typescriptlang.org/)
--   [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoke)
 -   [SWR](https://swr.vercel.app/)
 -   [Zustand](https://zustand-demo.pmnd.rs/)
 -   [styled-components](https://styled-components.com/)
