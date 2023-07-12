@@ -7,9 +7,15 @@ interface Props {
 	description?: ReactNode;
 	value: number | string;
 	url?: string;
+	"data-testid"?: string;
 }
 
-const Stat: FC<Props> = ({ description = null, value, url = null }) => {
+const Stat: FC<Props> = ({
+	description = null,
+	value,
+	url = null,
+	"data-testid": dataTestId = "",
+}) => {
 	const [data, isLoading] = usePokemonStat(url);
 	const { language } = useContext(LanguageContext);
 
@@ -30,7 +36,7 @@ const Stat: FC<Props> = ({ description = null, value, url = null }) => {
 	};
 
 	return (
-		<div>
+		<div data-testid={dataTestId}>
 			<strong>{getDescription()}: </strong>
 			{value}
 		</div>
