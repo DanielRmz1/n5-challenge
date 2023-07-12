@@ -28,12 +28,19 @@ start_project() {
 	scripts/start_morty & scripts/start_pokemon & scripts/start_host
 }
 
+run_test() {
+	scripts/test_morty & scripts/test_pokemon & scripts/test_host
+}
+
 case $action in
 	install)
 		install_project
 		;;
 	start)
 		start_project
+		;;
+	test)
+		run_test
 		;;
 	*)
 		print_message "UNHANDLED OPTION: Command -> $action <- not recognized"

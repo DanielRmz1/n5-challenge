@@ -31,6 +31,31 @@ From project root where **dev** file is located:
 
 http://localhost:5173
 
+## Run tests
+
+I have created a bash script to run all the projects test cases at once
+
+```bash
+	./dev test
+```
+
+But if you prefer you can run each one independently
+
+```bash
+	cd host-project
+	npm run test
+```
+
+```bash
+	cd pokemon-remote
+	npm run test
+```
+
+```bash
+	cd rick-n-morty-remote
+	npm run test
+```
+
 ## Tools & Libraries used
 
 -   [React](https://reactjs.org/)
