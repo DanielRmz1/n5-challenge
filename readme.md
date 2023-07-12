@@ -1,15 +1,48 @@
-# TODO:
+# N5 Challenge - Project
 
-## First Priority
+A Micro-Frontend solution to submit as a Challenge.
 
--   Add much tests cases as posible
+### Dependencies
 
-## Second priority
+-   Node LTS version
 
--   Complete readme
--   Create bash script to make easier to start project
--   Create styled-components theme with css colors I created
+# Instructions to initialize the project
 
-## Third Priority (Only if there is time)
+### Clone this repo
 
--   Deploy the app in my DNS
+```bash
+	git clone https://github.com/DanielRmz1/n5-challenge.git
+```
+
+### Attention: Make sure you are are located on root project and using a bash terminal
+
+I have created some bash scripts to make easier to setup and initialize this project.
+
+From project root where **dev** file is located:
+
+-   Run the following commands:
+
+```bash
+	./dev install
+	./dev start
+```
+
+-   After everything ran successfully, open the following url in a browser:
+
+http://localhost:5173
+
+## Tools & Libraries used
+
+-   [React](https://reactjs.org/)
+-   [Vite](https://vitejs.dev/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoke)
+-   [SWR](https://swr.vercel.app/)
+-   [Zustand](https://zustand-demo.pmnd.rs/)
+-   [styled-components](https://styled-components.com/)
+-   [React-Intl](https://formatjs.io/docs/react-intl/)
+-   [Module-Federation](https://webpack.js.org/concepts/module-federation/)
+-   [React-Testing-Library](https://testing-library.com/docs/react-testing-library/intro/)
+-   [Jest](https://jestjs.io/)
+-   [Vitest](https://vitest.dev/)
+-   [msw](https://mswjs.io/)
