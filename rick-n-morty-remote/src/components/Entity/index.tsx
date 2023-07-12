@@ -26,25 +26,25 @@ const Entity: FC<Character> = ({ image, name, species, origin, location }) => {
 				<img src={image} width="100px" height="100px" />
 			</div>
 			<div className="entity__description">
-				<div>
+				<div data-testid="name">
 					<strong>
 						<FormattedMessage id={"app.rickmorty.name"} />:{" "}
 					</strong>
 					{name}
 				</div>
-				<div>
+				<div data-testid="species">
 					<strong>
 						<FormattedMessage id={"app.rickmorty.species"} />:{" "}
 					</strong>
 					{species}
 				</div>
-				<div>
+				<div data-testid="origin">
 					<strong>
 						<FormattedMessage id={"app.rickmorty.origin"} />:{" "}
 					</strong>
 					{origin.name}
 				</div>
-				<div>
+				<div data-testid="location">
 					<strong>
 						<FormattedMessage id={"app.rickmorty.location"} />:{" "}
 					</strong>

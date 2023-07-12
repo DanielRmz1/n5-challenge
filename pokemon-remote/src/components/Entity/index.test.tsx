@@ -17,5 +17,4 @@ test("Check <Entity /> component works correctly", async () => {
 	render(<Entity {...props} />);
 
 	await waitFor(() => screen.getByTestId("entity-description"));
-	screen.debug();
 });
