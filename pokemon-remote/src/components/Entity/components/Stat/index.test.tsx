@@ -20,6 +20,5 @@ test("Check Stat component renders correctly fetched stat", async () => {
 		value: 10,
 	};
 	render(<Stat {...props} />);
-	await waitFor(() => screen.getByText(/hp/i));
-	screen.debug();
+	await waitFor(() => screen.getByText(/beer/i));
 });
